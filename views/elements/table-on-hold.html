@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <tr>
+    <th style="width: 10px"># ID</th>
+    <th>Project Name</th>
+    <th>Date</th>
+    <th>Files archived</th>
+    <th>Options</th>
+  </tr>
+  {% for project in projects.project %}
+  <tr>
+    <input type="hidden" class="project-id" value="{{ project.id }}">
+    <td>{{ project.id }}</td>
+    <td><a href="http://{{ settings.home_id }}.{{ settings.domain }}/projects/{{ project.id }}" target="_blank">{{ project.name }}</a></td>
+    <td>{{ attribute(project, 'created-on') }}</td>
+    <td>
+      <div class="form-group">
+        <input type="checkbox" id="files-archived-{{ project.id }}" class="files-archived-checkbox" {{ project.files_archived == 'true' ? 'checked' : ''  }}>
+        <span style="display: none">Processing...</span>
+      </div>
+    </td>
+    <td>
+      <div class="btn-group">
+        {% include 'elements/options.html' with {'status': project.status} %}
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>

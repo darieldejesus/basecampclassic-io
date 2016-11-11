@@ -1,0 +1,14 @@
+<table class="table table-striped">
+  <tr>
+    <th width="300">File Name</th>
+    <th>Size</th>
+    <th>Download</th>
+  </tr>
+  {% for file in files %}
+  <tr>
+    <td>{{ file.name }}</td>
+    <td>{{ attribute( file, 'byte-size' ) }} bytes</td>
+    <td><a href="{{ attribute( file, 'download-url' ) }}" target="_blank" download>Click here to download</a></td>
+  </tr>
+  {% endfor %}
+</table>
