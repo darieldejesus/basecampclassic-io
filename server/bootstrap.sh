@@ -52,11 +52,10 @@ sudo a2enmod rewrite
 sudo a2dissite 000-default.conf default-ssl.conf
 
 # Copy and load vhosts
-sudo ln -s /home/www/vagrant/default-config/reservationio.conf /etc/apache2/sites-enabled/
+sudo ln -s /home/www/server/default/basecampio.conf /etc/apache2/sites-enabled/
 
 # Restart Apache2
 sudo service apache2 restart
 
 # Define .env laravel and required settings
-cd /home/www/
-cp classes/App.conf.php.default classes/App.conf.php
+cp /home/www/classes/App.conf.php.default /home/www/classes/App.conf.php

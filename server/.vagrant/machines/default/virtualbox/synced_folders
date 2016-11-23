@@ -1,1 +1,0 @@
-{"virtualbox":{"/home/www":{"guestpath":"/home/www","hostpath":"/private/var/www/basecampclassic-io/server","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/private/var/www/basecampclassic-io/server","disabled":false,"__vagrantfile":true}}}

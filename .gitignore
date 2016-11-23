@@ -1,13 +1,7 @@
 *.DS_Store
 *.log
 *.zip
-.idea
-.sass-cache/
-/nbproject/
-/nbproject/private/
-/node_modules/
-ad.js
-TODO
-test.html
 vendor
 composer.lock
+classes/App.conf.php
+server/.vagrant
