@@ -1,8 +1,0 @@
-{% import "macros/buttons.html" as buttons %}
-{% if status == 'active' %}
-    {{ buttons.button_options(['hold', 'archive']) }}
-{% elseif status == 'on_hold' %}
-    {{ buttons.button_options(['archive', 'activate']) }}
-{% elseif status == 'archived' %}
-    {{ buttons.button_options(['activate', 'hold', 'delete']) }}
-{% endif %}

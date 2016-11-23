@@ -1,7 +1,0 @@
-{% macro button_options(options) %}
-	{% for option in options %}
-	<button type="button" id="btn-{{ option }}" data-loading-text="Processing..." class="btn btn-project-option btn-default">
-	{{ option|capitalize }}
-	</button>
-	{% endfor %}
-{% endmacro %}
