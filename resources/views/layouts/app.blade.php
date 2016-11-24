@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="/css/skin-purple-light.css">
 </head>
 <body class="hold-transition skin-purple-light sidebar-mini">
-<input type="hidden" id="home-id" value="{{ settings.home_id }}">
-<input type="hidden" id="domain" value="{{ settings.domain }}">
+<input type="hidden" id="home-id" value=" settings.home_id ">
+<input type="hidden" id="domain" value=" settings.domain ">
 <!-- Site wrapper -->
 <div class="wrapper">
 

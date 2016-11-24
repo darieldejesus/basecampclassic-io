@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ProjectController@getActived');
+
+Route::get('/onhold', 'ProjectController@getOnHold');
+
+Route::get('/archived', 'ProjectController@getArchived');
+
+Route::get('/users', 'UserController@getUsers');
+
+Route::get('/settings', 'SettingController@getSettings');
