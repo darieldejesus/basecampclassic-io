@@ -20,3 +20,5 @@ Route::get('/archived', 'ProjectController@getArchived');
 Route::get('/users', 'UserController@getUsers');
 
 Route::get('/settings', 'SettingController@getSettings');
+
+Auth::routes();

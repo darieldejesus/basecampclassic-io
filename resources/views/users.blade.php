@@ -15,7 +15,26 @@
     <div class="box-body">
       <!-- /.box-header -->
       <div class="box-body no-padding">
-        
+        <table class="table table-striped">
+          <tr>
+            <th style="width: 50px"># ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Options</th>
+          </tr>
+          @foreach ($users as $user)
+          <tr>
+            <td>{{ $user->id }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>
+              <div class="btn-group">
+                <a class="btn btn-default" href="/users/edit/{{ $user->id }}">Edit</a>
+              </div>
+            </td>
+          </tr>
+          @endforeach
+        </table>
         <!-- /.box-body -->
       </div>
       <!-- /.box -->

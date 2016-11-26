@@ -6,6 +6,9 @@
   <title>Basecamp IO. Project Manager</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <!-- Font Awesome -->
@@ -17,6 +20,14 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/css/skin-purple-light.css">
+
+  <!-- Scripts -->
+  <script>
+    window.Laravel = <?php echo json_encode([
+        'csrfToken' => csrf_token(),
+    ]); ?>
+  </script>
+
 </head>
 <body class="hold-transition skin-purple-light sidebar-mini">
 <input type="hidden" id="home-id" value=" settings.home_id ">
@@ -49,7 +60,15 @@
         </ul>
         <ul class="nav navbar-nav navbar-logout">
           <li>
-            <a href="/logout">Logout</a>
+            <a href="{{ url('/logout') }}"
+                onclick="event.preventDefault();
+                         document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
           </li>
         </ul>
       </div>
